@@ -162,7 +162,7 @@ export function DemoPopup() {
 
               {/* CTA */}
               <a
-                href="#get-started"
+                href="https://app.zuply.fr/register"
                 className="group flex w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-4 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/20 transition-all hover:bg-blue-600 hover:shadow-blue-500/30"
                 onClick={handleDismiss}
               >

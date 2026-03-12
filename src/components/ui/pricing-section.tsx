@@ -282,7 +282,7 @@ export function PricingSection() {
 
                 <CardFooter>
                   <a
-                    href="#get-started"
+                    href="https://app.zuply.fr/register"
                     className={cn(
                       "w-full rounded-xl px-6 py-3 text-center text-sm font-semibold transition-all",
                       plan.popular

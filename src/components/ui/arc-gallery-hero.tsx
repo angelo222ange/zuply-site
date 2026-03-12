@@ -180,7 +180,7 @@ export function ArcGalleryHero(props: ArcGalleryHeroProps) {
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <a
-            href="#get-started"
+            href="https://app.zuply.fr/register"
             className="inline-flex items-center rounded-full bg-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition-colors hover:bg-blue-600"
           >
             Essayer gratuitement
