@@ -40,7 +40,7 @@ export default function MentionsLegalesPage() {
               <strong>Siege social :</strong> Paris, France
             </p>
             <p>
-              <strong>Email :</strong> contact@app.zuply.fr
+              <strong>Email :</strong> contact@zuply.fr
             </p>
             <p>
               <strong>Site web :</strong> https://zuply.io
@@ -56,7 +56,7 @@ export default function MentionsLegalesPage() {
             Le directeur de la publication du site zuply.io est le representant
             legal de la societe Zuply SAS. Pour toute question relative au
             contenu publie sur ce site, vous pouvez nous contacter a l&apos;adresse
-            suivante : contact@app.zuply.fr.
+            suivante : contact@zuply.fr.
           </p>
         </section>
 
@@ -96,7 +96,7 @@ export default function MentionsLegalesPage() {
           </ul>
           <p>
             Pour exercer ces droits, vous pouvez adresser votre demande par
-            email a : contact@app.zuply.fr. Nous nous engageons a y repondre dans
+            email a : contact@zuply.fr. Nous nous engageons a y repondre dans
             un delai de 30 jours.
           </p>
           <p>
@@ -187,7 +187,7 @@ export default function MentionsLegalesPage() {
           </p>
           <div className="rounded-2xl border border-gray-200 bg-white/60 backdrop-blur p-6 space-y-1">
             <p className="font-semibold text-gray-900">Zuply SAS</p>
-            <p>Email : contact@app.zuply.fr</p>
+            <p>Email : contact@zuply.fr</p>
             <p>Site : https://zuply.io</p>
           </div>
         </section>

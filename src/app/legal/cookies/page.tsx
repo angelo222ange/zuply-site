@@ -193,7 +193,7 @@ export default function CookiesPage() {
           </p>
           <div className="rounded-2xl border border-gray-200 bg-white/60 backdrop-blur p-6 space-y-1">
             <p className="font-semibold text-gray-900">Zuply</p>
-            <p>Email : contact@app.zuply.fr</p>
+            <p>Email : contact@zuply.fr</p>
           </div>
         </section>
       </div>
