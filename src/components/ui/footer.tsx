@@ -27,7 +27,7 @@ const defaultSocialLinks: SocialLink[] = [
   { icon: <Twitter className="h-5 w-5" />, href: "https://twitter.com/zuply", label: "Twitter" },
   { icon: <Linkedin className="h-5 w-5" />, href: "https://linkedin.com/company/zuply", label: "LinkedIn" },
   { icon: <Github className="h-5 w-5" />, href: "https://github.com/zuply", label: "GitHub" },
-  { icon: <Mail className="h-5 w-5" />, href: "mailto:contact@zuply.io", label: "Email" },
+  { icon: <Mail className="h-5 w-5" />, href: "mailto:contact@zuply.fr", label: "Email" },
 ];
 
 const defaultNavLinks: FooterLink[] = [
