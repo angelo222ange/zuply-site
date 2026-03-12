@@ -51,13 +51,13 @@ export function Header() {
           {/* Right: Auth buttons */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="#connexion"
+              href="https://app.zuply.fr/login"
               className="text-sm font-medium text-gray-500 transition-colors hover:text-gray-900"
             >
               Connexion
             </a>
             <a
-              href="#inscription"
+              href="https://app.zuply.fr/register"
               className="inline-flex items-center rounded-xl bg-blue-500 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-600"
             >
               Inscription
@@ -101,14 +101,14 @@ export function Header() {
             ))}
             <div className="border-t border-gray-200/60 my-2" />
             <a
-              href="#connexion"
+              href="https://app.zuply.fr/login"
               className="rounded-xl px-4 py-2.5 text-sm font-medium text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900"
               onClick={() => setMobileOpen(false)}
             >
               Connexion
             </a>
             <a
-              href="#inscription"
+              href="https://app.zuply.fr/register"
               className="mt-1 inline-flex items-center justify-center rounded-xl bg-blue-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-blue-600"
               onClick={() => setMobileOpen(false)}
             >
