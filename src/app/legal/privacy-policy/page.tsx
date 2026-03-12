@@ -230,10 +230,10 @@ export default function PrivacyPolicyPage() {
             Pour exercer l&apos;un de ces droits, veuillez nous contacter a
             l&apos;adresse{" "}
             <a
-              href="mailto:privacy@zuply.io"
+              href="mailto:contact@app.zuply.fr"
               className="text-blue-500 underline hover:text-blue-600"
             >
-              privacy@zuply.io
+              contact@app.zuply.fr
             </a>
             . Nous repondrons a votre demande dans un delai de 30 jours.
           </p>
@@ -282,8 +282,8 @@ export default function PrivacyPolicyPage() {
           </p>
           <div className="rounded-2xl border border-gray-200 bg-white/60 backdrop-blur p-6 space-y-1">
             <p className="font-semibold text-gray-900">Zuply</p>
-            <p>Email : privacy@zuply.io</p>
-            <p>Delegue a la protection des donnees : dpo@zuply.io</p>
+            <p>Email : contact@app.zuply.fr</p>
+            <p>Delegue a la protection des donnees : contact@app.zuply.fr</p>
           </div>
         </section>
       </div>
