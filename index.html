@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zuply - Plateforme de generation SEO automatisee</title>
+  <meta name="description" content="Zuply automatise la creation d'articles SEO, la publication et la gestion de vos reseaux sociaux. Generez du contenu optimise en quelques clics.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Quicksand', 'sans-serif'],
+            display: ['DM Serif Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    ::selection { background: rgba(59, 91, 254, 0.15); color: #111827; }
+
+    .bg-orbs::before {
+      content: ""; position: fixed; top: -10%; left: -5%;
+      width: 50%; height: 50%;
+      background: radial-gradient(ellipse at center, rgba(59, 91, 254, 0.06) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .bg-orbs::after {
+      content: ""; position: fixed; bottom: -10%; right: -5%;
+      width: 45%; height: 45%;
+      background: radial-gradient(ellipse at center, rgba(249, 115, 22, 0.04) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .card-glass {
+      background: linear-gradient(135deg, rgba(230,235,245,0.75) 0%, rgba(215,225,250,0.65) 50%, rgba(232,236,252,0.7) 100%);
+      backdrop-filter: blur(24px) saturate(1.4);
+      -webkit-backdrop-filter: blur(24px) saturate(1.4);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(59,91,254,0.06), 0 1px 4px rgba(0,0,0,0.03), inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+
+    .navbar-glass {
+      background: linear-gradient(135deg, rgba(240,242,250,0.75) 0%, rgba(225,232,255,0.65) 100%);
+      backdrop-filter: blur(28px) saturate(1.5);
+      -webkit-backdrop-filter: blur(28px) saturate(1.5);
+      border: 1px solid rgba(255,255,255,0.65);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+
+    .btn-primary {
+      background: #3b5bfe; color: #fff; border: none; border-radius: 12px;
+      font-weight: 600; transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(59,91,254,0.25);
+    }
+    .btn-primary:hover {
+      background: #2d4bef;
+      box-shadow: 0 4px 16px rgba(59,91,254,0.35);
+      transform: translateY(-1px);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #3b5bfe 0%, #6366f1 50%, #f97316 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    .hover-lift { transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .hover-lift:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(59,91,254,0.08), 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    @keyframes fade-in-up {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in-up { animation: fade-in-up 0.6s ease-out both; }
+    .delay-100 { animation-delay: 100ms; }
+    .delay-200 { animation-delay: 200ms; }
+    .delay-300 { animation-delay: 300ms; }
+    .delay-400 { animation-delay: 400ms; }
+    .delay-500 { animation-delay: 500ms; }
+  </style>
+</head>
+<body class="font-sans bg-white text-gray-900 antialiased bg-orbs">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 mt-3">
+      <div class="navbar-glass rounded-2xl px-6 py-3 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2.5">
+          <img src="/favicon.png" alt="Zuply" class="w-8 h-8">
+          <span class="text-xl font-bold" style="color: #2563eb;">zuply</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#features" class="text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors">Fonctionnalites</a>
+          <a href="#how-it-works" class="text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors">Comment ca marche</a>
+          <a href="#pricing" class="text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors">Tarifs</a>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="https://app.zuply.fr/login" class="text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors hidden sm:block">Connexion</a>
+          <a href="https://app.zuply.fr/login" class="btn-primary px-5 py-2.5 text-sm inline-block">Commencer</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 md:pt-40 md:pb-32 px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-4xl md:text-6xl font-bold leading-tight animate-fade-in-up">
+        Generez du contenu SEO<br>
+        <span class="gradient-text">automatiquement</span>
+      </h1>
+      <p class="mt-6 text-lg md:text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed animate-fade-in-up delay-100">
+        Zuply automatise la creation d'articles optimises, la publication sur vos sites et la gestion de vos reseaux sociaux. Tout depuis une seule interface.
+      </p>
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-200">
+        <a href="https://app.zuply.fr/login" class="btn-primary px-8 py-4 text-base inline-block">
+          Essayer gratuitement
+        </a>
+        <a href="#how-it-works" class="text-sm font-semibold text-gray-500 hover:text-gray-700 transition-colors px-6 py-4">
+          Voir comment ca marche
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 md:py-28 px-4 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold animate-fade-in-up">Tout ce dont vous avez besoin</h2>
+        <p class="mt-4 text-gray-500 text-lg max-w-xl mx-auto animate-fade-in-up delay-100">Une plateforme complete pour automatiser votre strategie de contenu SEO.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="card-glass p-8 hover-lift animate-fade-in-up delay-100">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Generation IA</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Articles SEO generes par intelligence artificielle, optimises pour vos mots-cles et votre secteur d'activite.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="card-glass p-8 hover-lift animate-fade-in-up delay-200">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Multi-sites</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Gerez tous vos sites depuis un seul tableau de bord. Publication automatique via Git sur chaque site.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="card-glass p-8 hover-lift animate-fade-in-up delay-300">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-violet-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m-9.566-7.5l9.566 5.314" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Reseaux sociaux</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Connectez Facebook, Instagram, LinkedIn, Twitter, Pinterest et TikTok. Publiez vos contenus partout.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="card-glass p-8 hover-lift animate-fade-in-up delay-200">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Images IA</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Images hero generees automatiquement pour chaque article, uniques et optimisees pour votre secteur.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="card-glass p-8 hover-lift animate-fade-in-up delay-300">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Statistiques</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Suivez vos performances : articles generes, sites actifs, posts publies, le tout en temps reel.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="card-glass p-8 hover-lift animate-fade-in-up delay-400">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-pink-500 to-pink-600 flex items-center justify-center mb-5">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h1.5C5.496 19.5 6 18.996 6 18.375m-2.625 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-1.5A1.125 1.125 0 0118 18.375M20.625 4.5H3.375m17.25 0c.621 0 1.125.504 1.125 1.125M20.625 4.5h-1.5C18.504 4.5 18 5.004 18 5.625m3.75 0v1.5c0 .621-.504 1.125-1.125 1.125M3.375 4.5c-.621 0-1.125.504-1.125 1.125M3.375 4.5h1.5C5.496 4.5 6 5.004 6 5.625m-3.75 0v1.5c0 .621.504 1.125 1.125 1.125m0 0h1.5m-1.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Videos Motion</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Creez des videos promotionnelles automatiquement a partir de vos articles. 5 templates, 3 formats.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works" class="py-20 md:py-28 px-4 relative z-10">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold">Comment ca marche</h2>
+        <p class="mt-4 text-gray-500 text-lg">3 etapes pour automatiser votre contenu SEO.</p>
+      </div>
+      <div class="space-y-8">
+        <div class="card-glass p-8 flex flex-col md:flex-row items-start gap-6 hover-lift">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shrink-0">
+            <span class="text-white text-xl font-bold">1</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Connectez vos sites</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Ajoutez vos sites web via leur repository GitHub. Zuply detecte automatiquement la structure de votre projet et s'adapte.</p>
+          </div>
+        </div>
+        <div class="card-glass p-8 flex flex-col md:flex-row items-start gap-6 hover-lift">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center shrink-0">
+            <span class="text-white text-xl font-bold">2</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Generez vos articles</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Choisissez un mot-cle, une ville, un secteur. L'IA genere un article complet, optimise SEO, avec image hero unique.</p>
+          </div>
+        </div>
+        <div class="card-glass p-8 flex flex-col md:flex-row items-start gap-6 hover-lift">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shrink-0">
+            <span class="text-white text-xl font-bold">3</span>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">Publiez partout</h3>
+            <p class="text-gray-500 text-sm leading-relaxed">Publication automatique sur votre site via Git, puis partagez sur tous vos reseaux sociaux en un clic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="pricing" class="py-20 md:py-28 px-4 relative z-10">
+    <div class="max-w-3xl mx-auto text-center">
+      <div class="card-glass p-12 md:p-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Pret a automatiser votre SEO ?</h2>
+        <p class="text-gray-500 text-lg mb-10 max-w-lg mx-auto">Rejoignez Zuply et commencez a generer du contenu optimise pour vos sites web.</p>
+        <a href="https://app.zuply.fr/login" class="btn-primary px-10 py-4 text-base inline-block">
+          Commencer maintenant
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 border-t border-gray-100 relative z-10">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-2.5">
+          <img src="/favicon.png" alt="Zuply" class="w-7 h-7">
+          <span class="text-lg font-bold" style="color: #2563eb;">zuply</span>
+        </div>
+        <div class="flex items-center gap-6 text-sm text-gray-500">
+          <a href="/privacy" class="hover:text-gray-700 transition-colors">Politique de confidentialite</a>
+          <a href="/terms" class="hover:text-gray-700 transition-colors">Conditions d'utilisation</a>
+          <a href="/data-deletion" class="hover:text-gray-700 transition-colors">Suppression des donnees</a>
+        </div>
+        <p class="text-sm text-gray-400">2026 Zuply. Tous droits reserves.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
