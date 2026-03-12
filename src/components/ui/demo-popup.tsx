@@ -2,10 +2,25 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { X, Sparkles, ArrowRight } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 
 const DISMISS_KEY = "zuply-demo-popup-dismissed";
 const DISMISS_DURATION_MS = 24 * 60 * 60 * 1000; // 24 hours
+
+const floatingImages = [
+  {
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200",
+    alt: "Dashboard analytics",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200",
+    alt: "Graphiques performance",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200",
+    alt: "Code developpeur",
+  },
+];
 
 export function DemoPopup() {
   const [visible, setVisible] = useState(false);
@@ -39,32 +54,90 @@ export function DemoPopup() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 40, scale: 0.95 }}
           transition={{ type: "spring", stiffness: 400, damping: 30 }}
-          className="fixed bottom-3 left-3 right-3 sm:left-auto sm:right-4 sm:bottom-4 z-50 sm:max-w-[340px]"
+          className="fixed bottom-3 left-3 right-3 sm:left-auto sm:right-4 sm:bottom-4 z-50 sm:max-w-[360px]"
         >
           <div className="relative overflow-hidden rounded-2xl border border-white/60 bg-white/70 shadow-2xl backdrop-blur-2xl">
-            {/* Gradient accent bar */}
-            <div className="h-1 w-full bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600" />
+            {/* Image mosaic header with animations */}
+            <div className="relative h-36 w-full overflow-hidden bg-gradient-to-br from-blue-50 to-blue-100/50">
+              {floatingImages.map((img, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.8, y: 10 }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: [0, -6, 0],
+                  }}
+                  transition={{
+                    opacity: { delay: 0.2 + i * 0.15, duration: 0.4 },
+                    scale: { delay: 0.2 + i * 0.15, duration: 0.4 },
+                    y: {
+                      delay: 0.6 + i * 0.15,
+                      duration: 2.5 + i * 0.3,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                      ease: "easeInOut",
+                    },
+                  }}
+                  className="absolute rounded-xl shadow-lg ring-1 ring-white/80 overflow-hidden"
+                  style={{
+                    width: i === 0 ? 140 : i === 1 ? 110 : 100,
+                    height: i === 0 ? 90 : i === 1 ? 75 : 70,
+                    left: i === 0 ? "8%" : i === 1 ? "42%" : "68%",
+                    top: i === 0 ? "18%" : i === 1 ? "30%" : "10%",
+                    rotate: i === 0 ? "-3deg" : i === 1 ? "2deg" : "-2deg",
+                    zIndex: i === 0 ? 3 : i === 1 ? 2 : 1,
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </motion.div>
+              ))}
+
+              {/* Zuply logo badge floating */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.7, type: "spring", stiffness: 300 }}
+                className="absolute bottom-2 right-3 z-10 flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-lg ring-1 ring-gray-100"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/zuply-logo.webp"
+                  alt="Zuply"
+                  className="h-7 w-7 rounded object-contain"
+                />
+              </motion.div>
+
+              {/* Gradient fade bottom */}
+              <div className="absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-white/70 to-transparent" />
+            </div>
 
             {/* Close button */}
             <button
               type="button"
               onClick={handleDismiss}
-              className="absolute top-3.5 right-3 z-10 rounded-full p-1.5 text-gray-400 transition-all hover:bg-gray-100 hover:text-gray-600"
+              className="absolute top-2.5 right-2.5 z-10 rounded-full bg-white/80 p-1.5 text-gray-400 shadow-sm backdrop-blur transition-all hover:bg-white hover:text-gray-600"
               aria-label="Fermer"
             >
               <X className="h-3.5 w-3.5" />
             </button>
 
-            <div className="p-5">
-              {/* Icon + Badge */}
-              <div className="mb-4 flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 shadow-sm">
-                  <Sparkles className="h-5 w-5 text-blue-500" />
-                </div>
-                <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-600">
-                  Essai gratuit
-                </span>
-              </div>
+            <div className="px-5 pb-5 pt-3">
+              {/* Badge */}
+              <motion.span
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
+                className="mb-3 inline-block rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-600"
+              >
+                Essai gratuit
+              </motion.span>
 
               {/* Content */}
               <h3 className="mb-1.5 text-base font-bold text-gray-900">
