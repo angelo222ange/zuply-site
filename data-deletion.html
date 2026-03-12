@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suppression des donnees - Zuply</title>
+  <meta name="description" content="Instructions pour demander la suppression de vos donnees personnelles sur Zuply.">
+  <link rel="icon" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Quicksand', 'sans-serif'] } } } }
+  </script>
+  <style>
+    .navbar-glass {
+      background: linear-gradient(135deg, rgba(240,242,250,0.75) 0%, rgba(225,232,255,0.65) 100%);
+      backdrop-filter: blur(28px) saturate(1.5);
+      border: 1px solid rgba(255,255,255,0.65);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+    .card-glass {
+      background: linear-gradient(135deg, rgba(230,235,245,0.75) 0%, rgba(215,225,250,0.65) 50%, rgba(232,236,252,0.7) 100%);
+      backdrop-filter: blur(24px) saturate(1.4);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 20px;
+      box-shadow: 0 4px 24px rgba(59,91,254,0.06), 0 1px 4px rgba(0,0,0,0.03), inset 0 1px 0 rgba(255,255,255,0.6);
+    }
+  </style>
+</head>
+<body class="font-sans bg-white text-gray-900 antialiased">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 mt-3">
+      <div class="navbar-glass rounded-2xl px-6 py-3 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2.5">
+          <img src="/favicon.png" alt="Zuply" class="w-8 h-8">
+          <span class="text-xl font-bold" style="color: #2563eb;">zuply</span>
+        </a>
+        <a href="/" class="text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors">Retour a l'accueil</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-32 pb-20 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-3xl md:text-4xl font-bold mb-2">Suppression des donnees</h1>
+      <p class="text-gray-400 text-sm mb-10">Derniere mise a jour : 12 mars 2026</p>
+
+      <div class="space-y-8 text-gray-600 text-[15px] leading-relaxed">
+
+        <section>
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Politique de suppression des donnees utilisateur</h2>
+          <p>Conformement au RGPD (Reglement General sur la Protection des Donnees) et aux exigences des plateformes de reseaux sociaux (Meta, Instagram, LinkedIn, Twitter/X, Pinterest, TikTok), vous pouvez demander la suppression de toutes vos donnees personnelles stockees par Zuply.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Quelles donnees sont supprimees ?</h2>
+          <p>Lors d'une demande de suppression, les donnees suivantes seront definitivement effacees :</p>
+          <ul class="list-disc pl-6 mt-3 space-y-2">
+            <li>Votre compte utilisateur (email, nom, mot de passe hashe).</li>
+            <li>Tous les tokens d'acces OAuth aux reseaux sociaux connectes.</li>
+            <li>L'historique de vos articles generes et leurs metadonnees.</li>
+            <li>L'historique de vos publications sur les reseaux sociaux.</li>
+            <li>Les configurations de vos sites connectes.</li>
+            <li>Les images et videos generees par l'IA stockees sur nos serveurs.</li>
+            <li>Toutes les donnees de statistiques liees a votre compte.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Comment demander la suppression ?</h2>
+
+          <div class="space-y-4 mt-4">
+            <div class="card-glass p-6">
+              <h3 class="font-bold text-gray-900 mb-2">Option 1 : Par email</h3>
+              <p>Envoyez un email a <strong>contact@zuply.fr</strong> avec l'objet "Demande de suppression de donnees" en indiquant l'adresse email associee a votre compte.</p>
+            </div>
+
+            <div class="card-glass p-6">
+              <h3 class="font-bold text-gray-900 mb-2">Option 2 : Depuis votre compte</h3>
+              <p>Connectez-vous a <a href="https://app.zuply.fr" class="text-blue-600 font-semibold hover:underline">app.zuply.fr</a>, allez dans les parametres de votre compte, et utilisez l'option "Supprimer mon compte".</p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Delai de traitement</h2>
+          <ul class="list-disc pl-6 space-y-2">
+            <li>Votre demande sera traitee dans un delai maximum de <strong>30 jours</strong>.</li>
+            <li>Un email de confirmation vous sera envoye une fois la suppression effectuee.</li>
+            <li>La suppression est <strong>irreversible</strong>. Aucune donnee ne pourra etre recuperee apres traitement.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Donnees conservees apres suppression</h2>
+          <p>Certaines donnees peuvent etre conservees au-dela du delai de suppression uniquement si la loi l'exige :</p>
+          <ul class="list-disc pl-6 mt-3 space-y-2">
+            <li>Logs de connexion : conserves 1 an (obligation legale en France).</li>
+            <li>Donnees de facturation : conservees 10 ans (obligation comptable).</li>
+          </ul>
+          <p class="mt-3">Ces donnees conservees sont anonymisees et ne permettent plus de vous identifier directement.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Callback de suppression (Meta/Facebook)</h2>
+          <p>Si vous avez connecte votre compte Facebook ou Instagram via Zuply, vous pouvez egalement demander la suppression de vos donnees directement depuis les parametres de votre compte Facebook :</p>
+          <ol class="list-decimal pl-6 mt-3 space-y-2">
+            <li>Allez dans <strong>Parametres Facebook</strong> &gt; <strong>Applications et sites web</strong>.</li>
+            <li>Trouvez "Zuply" dans la liste.</li>
+            <li>Cliquez sur "Supprimer" pour revoquer l'acces et demander la suppression des donnees.</li>
+          </ol>
+          <p class="mt-3">Notre callback de suppression de donnees traitera automatiquement votre demande.</p>
+        </section>
+
+        <section>
+          <h2 class="text-xl font-bold text-gray-900 mb-3">Contact</h2>
+          <p>Pour toute question relative a la suppression de vos donnees :</p>
+          <p class="mt-3"><strong>Email</strong> : contact@zuply.fr</p>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-12 px-4 border-t border-gray-100">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2.5">
+        <img src="/favicon.png" alt="Zuply" class="w-7 h-7">
+        <span class="text-lg font-bold" style="color: #2563eb;">zuply</span>
+      </div>
+      <div class="flex items-center gap-6 text-sm text-gray-500">
+        <a href="/privacy" class="hover:text-gray-700 transition-colors">Confidentialite</a>
+        <a href="/terms" class="hover:text-gray-700 transition-colors">Conditions</a>
+        <a href="/data-deletion" class="hover:text-gray-700 transition-colors font-semibold text-gray-900">Suppression des donnees</a>
+      </div>
+      <p class="text-sm text-gray-400">2026 Zuply. Tous droits reserves.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
