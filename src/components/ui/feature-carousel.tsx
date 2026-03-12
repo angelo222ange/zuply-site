@@ -13,6 +13,8 @@ import {
   Rocket,
   Mail,
   LayoutDashboard,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -109,6 +111,31 @@ export default function FeatureCarousel() {
     setDirection(1);
     setActiveIndex((prev) => (prev + 1) % features.length);
   }, []);
+
+  const goPrev = useCallback(() => {
+    setDirection(-1);
+    setActiveIndex((prev) => (prev - 1 + features.length) % features.length);
+  }, []);
+
+  // Touch/swipe support
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(() => {
+    const diff = touchStartX.current - touchEndX.current;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) goNext();
+      else goPrev();
+    }
+  }, [goNext, goPrev]);
 
   // Auto-play
   useEffect(() => {
@@ -250,8 +277,13 @@ export default function FeatureCarousel() {
         </div>
 
         {/* Panneau droit */}
-        <div className="relative w-full lg:w-[60%] bg-gray-50 flex items-center justify-center p-4 sm:p-8 lg:p-12 min-h-[240px] sm:min-h-[350px]">
-          <div className="relative w-full h-full flex items-center justify-center">
+        <div
+          className="relative w-full lg:w-[60%] bg-gray-50 flex flex-col items-center justify-center p-4 sm:p-8 lg:p-12 min-h-[240px] sm:min-h-[350px]"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
+          <div className="relative w-full h-full flex items-center justify-center flex-1">
             {features.map((feature, index) => {
               const style = getCardStyle(index);
               return (
@@ -308,6 +340,45 @@ export default function FeatureCarousel() {
                 </motion.div>
               );
             })}
+          </div>
+
+          {/* Mobile navigation */}
+          <div className="flex items-center gap-3 mt-4 lg:hidden">
+            <button
+              type="button"
+              onClick={goPrev}
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm text-gray-600 transition-colors hover:bg-gray-50 active:bg-gray-100"
+              aria-label="Precedent"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+
+            {/* Dots */}
+            <div className="flex items-center gap-1.5">
+              {features.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => goTo(i)}
+                  className={cn(
+                    "rounded-full transition-all duration-300",
+                    i === activeIndex
+                      ? "h-2 w-6 bg-blue-500"
+                      : "h-2 w-2 bg-gray-300"
+                  )}
+                  aria-label={`Fonctionnalite ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={goNext}
+              className="flex h-9 w-9 items-center justify-center rounded-full bg-white border border-gray-200 shadow-sm text-gray-600 transition-colors hover:bg-gray-50 active:bg-gray-100"
+              aria-label="Suivant"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
           </div>
         </div>
       </div>
