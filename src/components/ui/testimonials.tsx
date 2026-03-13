@@ -110,6 +110,8 @@ function TestimonialsColumn({
                     src={t.image}
                     alt={t.name}
                     className="h-10 w-10 rounded-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <div className="flex flex-col">
                     <span className="text-sm font-semibold text-gray-900 leading-5">

@@ -217,8 +217,11 @@ function ZuplyIcon() {
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src="/zuply-logo.webp"
-      alt="Zuply"
+      alt="Zuply - hub central d'integrations pour la publication de contenu"
+      width={32}
+      height={32}
       className="h-8 w-8 rounded object-contain"
+      decoding="async"
     />
   );
 }

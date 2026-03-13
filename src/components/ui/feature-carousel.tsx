@@ -22,6 +22,7 @@ interface Feature {
   label: string;
   description: string;
   image: string;
+  alt: string;
   icon: React.ElementType;
 }
 
@@ -29,61 +30,71 @@ const features: Feature[] = [
   {
     label: "Generation d'Articles",
     description: "Creez des articles de blog optimises SEO en quelques clics grace a l'IA.",
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=600&q=70&auto=format&fit=crop',
+    alt: "Generation d'articles de blog optimises SEO par intelligence artificielle",
     icon: FileText,
   },
   {
     label: "Pipeline d'Images",
     description: 'Images generees par IA et photos de stock selectionnees automatiquement.',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=70&auto=format&fit=crop',
+    alt: "Pipeline automatique de generation d'images par IA pour le contenu web",
     icon: Image,
   },
   {
     label: 'Multi-Sites',
     description: 'Gerez plusieurs sites depuis un tableau de bord unique.',
-    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&q=70&auto=format&fit=crop',
+    alt: "Gestion multi-sites depuis un tableau de bord centralise Zuply",
     icon: Globe,
   },
   {
     label: 'Publication Git',
     description: 'Publication automatique via Git vers vos sites Next.js.',
-    image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&q=70&auto=format&fit=crop',
+    alt: "Publication automatique d'articles via Git vers sites Next.js",
     icon: GitBranch,
   },
   {
     label: 'Videos Promotionnelles',
     description: '5 templates de videos generees avec Remotion.',
-    image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=70&auto=format&fit=crop',
+    alt: "Creation de videos promotionnelles automatiques avec templates Remotion",
     icon: Video,
   },
   {
     label: 'Reseaux Sociaux',
     description: 'Contenu adapte pour chaque plateforme sociale.',
     image: '/stock-reseaux-sociaux.webp',
+    alt: "Contenu adapte pour les reseaux sociaux genere automatiquement",
     icon: Share2,
   },
   {
     label: 'SEO Avance',
     description: 'Optimisation automatique des mots-cles, H2, meta descriptions.',
-    image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=600&q=70&auto=format&fit=crop',
+    alt: "Optimisation SEO avancee automatique des mots-cles et meta descriptions",
     icon: Search,
   },
   {
     label: 'Deploiement Auto',
     description: 'Deploiement automatique sur VPS en un clic.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=70&auto=format&fit=crop',
+    alt: "Deploiement automatique de sites web sur serveur VPS",
     icon: Rocket,
   },
   {
     label: 'Notifications Email',
     description: 'Restez informe a chaque etape de votre pipeline.',
-    image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=600&q=70&auto=format&fit=crop',
+    alt: "Notifications email automatiques pour le suivi du pipeline de contenu",
     icon: Mail,
   },
   {
     label: 'Tableau de Bord',
     description: "Vue d'ensemble complete de tous vos contenus.",
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=70&auto=format&fit=crop',
+    alt: "Tableau de bord Zuply avec vue d'ensemble des contenus generes",
     icon: LayoutDashboard,
   },
 ];
@@ -307,9 +318,12 @@ export default function FeatureCarousel() {
                   {/* Image */}
                   <img
                     src={feature.image}
-                    alt={feature.label}
+                    alt={feature.alt}
+                    width={600}
+                    height={450}
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    decoding="async"
                   />
 
                   {/* Overlay avec label */}

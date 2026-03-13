@@ -113,8 +113,12 @@ export function Footer({
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/zuply-logo.webp"
-                    alt="Zuply"
+                    alt="Logo Zuply - generation de contenu automatisee"
+                    width={56}
+                    height={56}
                     className="h-full w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
               </div>

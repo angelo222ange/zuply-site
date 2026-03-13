@@ -9,15 +9,15 @@ const DISMISS_DURATION_MS = 24 * 60 * 60 * 1000; // 24 hours
 
 const floatingImages = [
   {
-    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200",
+    src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=150&q=70&auto=format&fit=crop",
     alt: "Dashboard analytics",
   },
   {
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200",
+    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=150&q=70&auto=format&fit=crop",
     alt: "Graphiques performance",
   },
   {
-    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200",
+    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=150&q=70&auto=format&fit=crop",
     alt: "Code developpeur",
   },
 ];
@@ -93,8 +93,11 @@ export function DemoPopup() {
                   <img
                     src={img.src}
                     alt={img.alt}
+                    width={150}
+                    height={100}
                     className="h-full w-full object-cover"
                     loading="lazy"
+                    decoding="async"
                   />
                 </motion.div>
               ))}
@@ -109,8 +112,12 @@ export function DemoPopup() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/zuply-logo.webp"
-                  alt="Zuply"
+                  alt="Logo Zuply - essai gratuit de la plateforme"
+                  width={28}
+                  height={28}
                   className="h-7 w-7 rounded object-contain"
+                  loading="lazy"
+                  decoding="async"
                 />
               </motion.div>
 

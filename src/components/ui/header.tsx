@@ -26,8 +26,11 @@ export function Header() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/zuply-logo.webp"
-                alt="Zuply"
+                alt="Zuply - plateforme de contenu SEO propulsee par IA"
+                width={32}
+                height={32}
                 className="h-8 w-8 rounded-lg object-contain"
+                decoding="async"
               />
               <span className="text-xl font-bold text-gray-900 tracking-tight">
                 zuply

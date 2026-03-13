@@ -3,8 +3,10 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
+type HeroImage = { src: string; alt: string };
+
 type ArcGalleryHeroProps = {
-  images?: string[];
+  images?: HeroImage[];
   startAngle?: number;
   endAngle?: number;
   radiusLg?: number;
@@ -17,18 +19,18 @@ type ArcGalleryHeroProps = {
 };
 
 const defaultImages = [
-  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400", // dashboard analytics
-  "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400", // ecran data
-  "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400", // redaction contenu
-  "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400",   // equipe marketing
-  "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400", // artisan au travail
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400", // equipe tech laptops
-  "/stock-reseaux-sociaux.webp",                                        // reseaux sociaux
-  "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400", // developpeur code
-  "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400",   // reunion business
-  "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400",   // bureau startup
-  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400",   // graphiques performance
-  "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400", // workspace creatif
+  { src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=200&q=75&auto=format&fit=crop", alt: "Tableau de bord analytics marketing digital" },
+  { src: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=200&q=75&auto=format&fit=crop", alt: "Ecran de visualisation de donnees SEO" },
+  { src: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=200&q=75&auto=format&fit=crop", alt: "Redaction de contenu optimise SEO" },
+  { src: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&q=75&auto=format&fit=crop", alt: "Equipe marketing en reunion strategie contenu" },
+  { src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=200&q=75&auto=format&fit=crop", alt: "Artisan creant du contenu pour son site web" },
+  { src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=200&q=75&auto=format&fit=crop", alt: "Equipe tech collaborant sur une plateforme SaaS" },
+  { src: "/stock-reseaux-sociaux.webp", alt: "Gestion de contenu pour les reseaux sociaux" },
+  { src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&q=75&auto=format&fit=crop", alt: "Developpeur integrant une API de publication automatique" },
+  { src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=200&q=75&auto=format&fit=crop", alt: "Reunion business planification strategie digitale" },
+  { src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=200&q=75&auto=format&fit=crop", alt: "Bureau startup utilisant des outils de marketing IA" },
+  { src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&q=75&auto=format&fit=crop", alt: "Graphiques de performance SEO et trafic organique" },
+  { src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=200&q=75&auto=format&fit=crop", alt: "Espace de travail creatif pour creation de contenu" },
 ];
 
 function getResponsiveValues(
@@ -132,7 +134,7 @@ export function ArcGalleryHero(props: ArcGalleryHeroProps) {
         }}
       >
         {mounted &&
-          images.map((src, i) => {
+          images.map((img, i) => {
             const angleDeg = startAngle + angleStep * i;
             const angleRad = (angleDeg * Math.PI) / 180;
             // Position on arc: angle 0 = top, negative = left, positive = right
@@ -153,13 +155,17 @@ export function ArcGalleryHero(props: ArcGalleryHeroProps) {
                 }}
               >
                 <img
-                  src={src}
-                  alt={`Exemple de contenu ${i + 1}`}
+                  src={img.src}
+                  alt={img.alt}
+                  width={cardSize}
+                  height={cardSize}
                   className="h-full w-full rounded-2xl object-cover shadow-lg ring-1 ring-gray-200 transition-transform duration-300 hover:scale-105"
                   style={{
                     transform: `rotate(${rotation}deg)`,
                   }}
-                  loading="lazy"
+                  loading={i < 4 ? "eager" : "lazy"}
+                  decoding="async"
+                  fetchPriority={i < 2 ? "high" : "low"}
                 />
               </div>
             );

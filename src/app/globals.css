@@ -26,8 +26,8 @@
 /* Glass card effect */
 .glass-card {
   background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(147, 197, 253, 0.3);
   box-shadow: 0 8px 32px rgba(59, 130, 246, 0.08);
 }
